@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/amphibianLIstFragment">
+
+    <fragment
+        android:id="@+id/amphibianLIstFragment"
+        android:name="com.example.amphibians.ui.AmphibianLIstFragment"
+        android:label="fragment_amphibian_l_ist"
+        tools:layout="@layout/fragment_amphibian_l_ist" >
+        <action
+            android:id="@+id/action_amphibianLIstFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.amphibians.ui.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailsFragment_to_amphibianLIstFragment"
+            app:destination="@id/amphibianLIstFragment" />
+        <argument
+            android:name="amphibians"
+            app:argType="com.example.amphibians.model.Amphibian" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.amphibians.ui.MainActivity"
+        android:label="MainActivity" />
+</navigation>
